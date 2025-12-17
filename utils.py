@@ -58,4 +58,12 @@ def get_user_answer():
     #          get user input using input(), normalize it using
     #          normalize_answer(), return valid answer or print
     #          error message on invalid input
+    while True:
+        user_input = input("Enter A, B, C, or D: ")
+        normalized_answer = normalize_answer(user_input)
+
+        if normalized is not None:
+            return normalized
+
+        print("Invalid input, please enter A, B, C, or D.")
 
