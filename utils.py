@@ -54,16 +54,12 @@ def get_user_answer():
     Returns:
         Normalized valid answer (A, B, C, or D)
     """
-    # TODO 🇺🇸: Create infinite loop for input validation,
-    #          get user input using input(), normalize it using
-    #          normalize_answer(), return valid answer or print
-    #          error message on invalid input
+    
     while True:
         user_input = input("Enter A, B, C, or D: ")
         normalized_answer = normalize_answer(user_input)
 
-        if normalized is not None:
-            return normalized
-
+        if normalized_answer is not None:
+            return normalized_answer
         print("Invalid input, please enter A, B, C, or D.")
 
