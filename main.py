@@ -35,6 +35,10 @@ def show_final_score(score, total_questions):
     percentage = (score / total_questions) * 100
     print(f"Final Score: {score}/{total_questions} ({percentage:.2f}%)")
 
+def show_round_result(is_correct, correct_answer, options, score, question_number):
+    show_feedback(is_correct, correct_answer, options)
+    print(f"Current Score: {score}/{question_number}")
+
 def main():
     questions = get_questions()
     score = 0
@@ -43,8 +47,7 @@ def main():
         is_correct = ask_question(question, i)
         if is_correct:
             score += 1
-        show_feedback(is_correct, question['answer'], question['options'])
-        print(f"Current Score: {score}/{i}\n")
+        show_round_result(is_correct, question['answer'], question['options'], score, i)
 
     show_final_score(score, len(questions))
 
